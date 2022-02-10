@@ -112,7 +112,7 @@ cd ../flask-docker-app/k8s
 ls setup.sh
 chmod +x setup.sh
 chmod +x setup2.sh
-INSTANCE_ROLE=$(aws cloudformation describe-stack-resources --stack-name CdkStackALBEksBg | jq .StackResources[].PhysicalResourceId | grep CdkStackALBEksBg-ClusterDefaultCapacityInstanceRol | tr -d '["\r\n]')
+INSTANCE_ROLE=$(aws cloudformation describe-stack-resources --stack-name CdkStackALBEksBg | jq .StackResources[].PhysicalResourceId | grep CdkStackALBEksBg-CdkStackALBEksBg-ClusterNodegroupDefaultCapacityNo | tr -d '["\r\n]')
 CLUSTER_NAME=$(aws cloudformation describe-stack-resources --stack-name CdkStackALBEksBg | jq '.StackResources[] | select(.ResourceType=="Custom::AWSCDK-EKS-Cluster").PhysicalResourceId' | tr -d '["\r\n]')
 echo "INSTANCE_ROLE = " $INSTANCE_ROLE 
 echo "CLUSTER_NAME = " $CLUSTER_NAME
